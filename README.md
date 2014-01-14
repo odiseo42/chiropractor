@@ -103,6 +103,7 @@ codes by setting the property: enableErrorHandler: true in your model or collect
 You can also override or create your own custom error template by overriding the row "error" template with your own.
 
 Using Chiropractor 0.1.20++
+-----
 
 You will need to add these paths:
 
