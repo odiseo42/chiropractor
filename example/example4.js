@@ -34,7 +34,7 @@ define(function (require) {
   }];
 
   ModelConstructor = Models.Base.extend({
-    url: "http://rodin-admin.cloud.wiser-ci.com/api/v1/topics/topic/company/webeffects"
+    url: "http://data.wisertogether.com/api/v1/conditions/high-blood-pressure/"
   });
 
   Model = new ModelConstructor({});

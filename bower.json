@@ -11,6 +11,7 @@
     "backbone.subroute": "~0.4.0",
     "requirejs": "~2.1.8",
     "json3": "~3.2.5",
+    "console-shim": "*",
     "backbone-validation": "~0.8.0",
     "backbone-deep-model": "git://github.com/WiserTogether/backbone-deep-model#0.10.5"
   },
