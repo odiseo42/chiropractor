@@ -102,3 +102,21 @@ codes by setting the property: enableErrorHandler: true in your model or collect
 
 You can also override or create your own custom error template by overriding the row "error" template with your own.
 
+Using Chiropractor 0.1.20++
+-----
+
+You will need to add these paths:
+
+```
+'chiropractor-path': '../components/chiropractor',
+'jquery.cors': '../components/chiropractor/jquery.cors',
+```
+
+Also you will need to add these shims:
+
+```
+'console-shim': {
+      exports: 'console'
+},
+'json2': { exports: 'JSON' },
+```
