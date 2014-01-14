@@ -26,7 +26,10 @@ require.config({
     'backbone.deep.model': 'bower_components/backbone-deep-model/src/deep-model',
     'underscore.mixin.deepextend': './lib/underscore.mixin.deepextend',
     'json-ie7': './lib/JSON',
-    'jquery.ie.cors':         './lib/jquery.ie.cors'
+    'console-shim': 'bower_components/console-shim/console-shim',
+    //'easyxdm': 'chiropractor-path/jquery.cors/easyxdm/easyxdm',
+    //'jquery.cors': 'jquery.cors',
+    'chiropractor-path': './'
   },
 
   skipModuleInsertion: false,
@@ -53,18 +56,24 @@ require.config({
     'json-ie7': {
       exports: 'JSON'
     },
-    'jquery.ie.cors': {
-      deps: ['jquery']
+    'console-shim': {
+      exports: 'console'
     },
     'jquery.cookie': {
       deps: ['jquery'],
       exports: 'jQuery.cookie'
-    }
+    },
+    'json2': { exports: 'JSON' }
+    //'chiropractor-path/jquery.cors/easyxdm/easyxdm': { exports: 'easyXDM' },
+    //'easyxdm': {
+    //  deps: ['json2'],
+//exports: 'easyXDM'
+//    }
   },
 
   deps: [
     'jquery',
-    'jquery.ie.cors',
+//jquery.cors/jquery.cors',
     'hbs',
     'underscore'
   ],

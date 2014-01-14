@@ -37,7 +37,7 @@ module.exports = function(grunt) {
                     name: 'chiropractor',
                     mainConfigFile: 'build.js',
                     optimize: "none",
-                    exclude: ['jquery', 'underscore', 'json3', 'handlebars', 'jquery.cookie', 'hbs'],
+                    exclude: ['underscore', 'json3', 'handlebars', 'jquery.cookie', 'hbs'],
                     done: function(done, output) {
                         var duplicates = require('rjs-build-analysis').duplicates(output);
 
@@ -125,7 +125,7 @@ module.exports = function(grunt) {
          devserver: {
           options: {
             'type': 'http',
-            'port': 8888,
+            'port': 50004,
             //'base': '../',
             'cache': 'no-cache',
             'async': true

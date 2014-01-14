@@ -1,10 +1,12 @@
 /*global define*/
 define(function (require) {
   'use strict';
+  require('chiropractor-path/jquery.cors/jquery.cors');
 
   var Backbone = require('backbone'),
     _ = require('underscore'),
     Base,
+    $ = require('jquery'),
     TemplateError = require('hbs!./views/templates/error/modelfetch');
 
   require('underscore.mixin.deepextend');

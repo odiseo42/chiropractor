@@ -31,9 +31,13 @@
             'backbone.validation': 'bower_components/backbone-validation/dist/backbone-validation-amd',
             'backbone.deep.model': 'bower_components/backbone-deep-model/src/deep-model',
             'underscore.mixin.deepextend': '/lib/underscore.mixin.deepExtend',
-            'jquery.ie.cors':         './lib/jquery.ie.cors',
+            //'jquery.ie.cors':         './lib/jquery.ie.cors',
             'chiropractor': 'src/main',
-            'json-ie7':'./lib/JSON'
+            'json-ie7':'./lib/JSON',
+            'console-shim': 'bower_components/console-shim/console-shim',
+            //'easyxdm': 'chiropractor-path/jquery.cors/easyxdm/easyxdm',
+            //'jquery.cors': 'jquery.cors',
+            'chiropractor-path': './'
         },
         urlArgs: "bust="+(new Date()).getTime(),
         skipModuleInsertion: false,
@@ -47,40 +51,35 @@
 
         shim: {
             'backbone': {
-                deps: ['jquery', 'underscore'],
-                exports: 'Backbone'
+              deps: ['jquery', 'underscore'],
+              exports: 'Backbone'
             },
             'underscore': {
-                exports: '_'
-            },
-            'underscore.mixin.deepextend': {
-
+              exports: '_'
             },
             'backbone.deep.model': {
-                deps: ['backbone', 'underscore'],
-                exports: 'Backbone.DeepModel'
+              deps: ['underscore.mixin.deepextend', 'backbone', 'underscore'],
+              exports: 'Backbone.DeepModel'
             },
             'json-ie7': {
-                exports: 'JSON'
+              exports: 'JSON'
             },
-            'jquery.ie.cors': {
-                deps: ['jquery']
-            },
-            'jquery': {
-                deps: ['json-ie7'],
-                exports: 'jQuery'
+            'console-shim': {
+              exports: 'console'
             },
             'jquery.cookie': {
-                deps: ['jquery'],
-                exports: 'jQuery.cookie'
-            }
+              deps: ['jquery'],
+              exports: 'jQuery.cookie'
+            },
+            'json2': { exports: 'JSON' }
         },
 
         deps: [
             //'jquery',
             'hbs',
-            'jquery',
-            'jquery.ie.cors'
+            'jquery'
+            //'jquery.cors/jquery.cors'
+            //'jquery.ie.cors'
         ],
 
         enforceDefine: true
