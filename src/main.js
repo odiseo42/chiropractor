@@ -17,10 +17,11 @@ define(function(require) {
     require('./hbs');
 
     Subscribe = function(channel,object) {
+      //We want to be able to push new listeners into Channels[channel]
       if (!Channels[channel]) {
         Channels[channel] = [];
-        Channels[channel].push(object);
       }
+      Channels[channel].push(object);
     };
     Publish = function(channel,options) {
       if (Channels[channel]) {
