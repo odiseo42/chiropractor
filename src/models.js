@@ -14,7 +14,16 @@ define(function (require) {
     Base,
     Revision,
     UserAgent,
-    RegExpression;
+    RegExpression,
+    ASSETS_BASE_URL;
+
+  // Add Wiser specific settings Issue #31
+
+  if(window && window.Wiser && window.Wiser.ASSETS_BASE_URL) {
+    ASSETS_BASE_URL = window.Wiser.ASSETS_BASE_URL;
+  } else {
+    ASSETS_BASE_URL = '';
+  }
 
   require('underscore.mixin.deepextend');
 
@@ -37,6 +46,7 @@ define(function (require) {
     sync: function (method, model, options) {
       // Setup the authentication handlers for the BaseModel
       //
+
       auth.sync.call(this, method, model, options);
       switch (method) {
       case 'read':
@@ -47,6 +57,10 @@ define(function (require) {
           // Timeout set to 30 seconds.
           options.timeout = 30000;
         }
+        break;
+      case 'update':
+        // Remove Wiser specific settings Issue #31
+        model.unset('Wiser');
         break;
       default:
       }
@@ -83,8 +97,18 @@ define(function (require) {
           // state as it was
           return {};
         }
+
+        // Add Wiser specific settings Issue #31
+        resp.Wiser = {};
+        resp.Wiser.ASSETS_BASE_URL = ASSETS_BASE_URL;
+
         return resp.data;
       }
+
+      // Add Wiser specific settings Issue #31
+      resp.Wiser = {};
+      resp.Wiser.ASSETS_BASE_URL = ASSETS_BASE_URL;
+
       return Backbone.Model.prototype.parse.apply(this, arguments);
     },
 

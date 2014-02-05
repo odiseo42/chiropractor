@@ -7,7 +7,16 @@ define(function (require) {
     _ = require('underscore'),
     Base,
     $ = require('jquery'),
-    TemplateError = require('hbs!./views/templates/error/modelfetch');
+    TemplateError = require('hbs!./views/templates/error/modelfetch'),
+    ASSETS_BASE_URL;
+
+  // Add Wiser specific settings Issue #31
+
+  if(window && window.Wiser && window.Wiser.ASSETS_BASE_URL) {
+    ASSETS_BASE_URL = window.Wiser.ASSETS_BASE_URL;
+  } else {
+    ASSETS_BASE_URL = '';
+  }
 
   require('underscore.mixin.deepextend');
 
@@ -40,11 +49,21 @@ define(function (require) {
           options.timeout = 30000;
         }
         break;
+      case 'update':
+        // Remove Wiser specific settings Issue #31
+        model.unset('Wiser');
+        break;
       default:
       }
       return Backbone.Collection.prototype.sync.call(
         this, method, model, options
       );
+    },
+    parse: function (resp, options) {
+      // Add Wiser specific settings Issue #31
+      resp.Wiser = {};
+      resp.Wiser.ASSETS_BASE_URL = ASSETS_BASE_URL;
+      return Backbone.Collection.prototype.parse.apply(this, arguments);
     }
   });
 
