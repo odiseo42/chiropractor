@@ -26,10 +26,10 @@ require.config({
     'backbone.deep.model': 'bower_components/backbone-deep-model/src/deep-model',
     'underscore.mixin.deepextend': './lib/underscore.mixin.deepextend',
     'json-ie7': './lib/JSON',
-    'console-shim': 'bower_components/console-shim/console-shim',
+    'console-shim': 'bower_components/console-shim/console-shim'
     //'easyxdm': 'chiropractor-path/jquery.cors/easyxdm/easyxdm',
     //'jquery.cors': 'jquery.cors',
-    'chiropractor-path': './'
+    //'chiropractor-path': './'
   },
 
   skipModuleInsertion: false,

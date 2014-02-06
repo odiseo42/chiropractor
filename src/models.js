@@ -1,7 +1,9 @@
 /*global define,setTimeout,clearTimeout*/
 define(function (require) {
   'use strict';
-    require('chiropractor-path/jquery.cors/jquery.cors');
+
+  require('jquery.cors/jquery.cors');
+
 
   var Backbone = require('backbone'),
     _ = require('underscore'),
