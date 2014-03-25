@@ -42,7 +42,12 @@ require(['jquery', 'easyxdm'], function ($, easyXDM) {
                         'https://dev.wsrcdn.net.s3.amazonaws.com',
                         'https://dev.wsrcdn.net',
                         'https://b.wsrcdn.net',
-                        'https://b.wsrcdn.net.s3.amazonaws.com'
+                        'https://b.wsrcdn.net.s3.amazonaws.com',
+                        'https://cms.wiser-dev.com',
+                        'https://cms.wiser-tst.com',
+                        'https://cms.mywiserhealth.com',
+                        'https://beta.wiser-dev.com',
+                        'https://beta.wiser-tst.com'
                     ], // exact strings or regular expressions
                     i = 0;
 

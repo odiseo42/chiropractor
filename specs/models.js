@@ -300,7 +300,7 @@ define(function(require) {
                 this.model.fetch();
                 this.server.respond();
 
-                expect(this.model.attributes).to.eql(modelData);
+                expect(this.model.attributes.name).to.eql(modelData.name);
             });
 
             it('should extract the data from legacy responses.', function() {

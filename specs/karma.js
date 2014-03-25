@@ -29,6 +29,8 @@ require.config({
         'underscore.mixin.deepextend': 'lib/underscore.mixin.deepextend',
         'json-ie7': './lib/JSON',
         'jquery.ie.cors':         './lib/jquery.ie.cors',
+        'console-shim': 'bower_components/console-shim/console-shim',
+        'chiropractor-path': './../',
         // Testing Dependencies
         'sinon':                'bower_components/sinonjs/sinon',
         'es5-shim':             'bower_components/es5-shim/es5-shim',
@@ -64,8 +66,12 @@ require.config({
             exports: 'Backbone.DeepModel'
         },
         'json-ie7': {
-            exports: 'JSON'
+          exports: 'JSON'
         },
+        'console-shim': {
+          exports: 'console'
+        },
+        'json2': { exports: 'JSON' },
         'jquery.ie.cors': {
           deps: ['jquery']
         },

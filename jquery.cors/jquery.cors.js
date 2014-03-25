@@ -25,16 +25,6 @@
  *    Access-Control-Allow-Headers: x-requested-with, content-type, accept, origin, authorization
  *
  */
- // extend configuration
-require.config({
-  shim: {
-    'chiropractor-path/jquery.cors/easyxdm/easyxdm': { exports: 'easyXDM' },
-    'chiropractor-path/jquery.cors/easyxdm/easyxdm': {
-      deps: ['json2'],
-      exports: 'easyXDM'
-    }
-  }
-});
 
 define(function (require) {
     "use strict";
@@ -42,8 +32,8 @@ define(function (require) {
         $ = require('jquery'),
         JSON = require('json2'),
         console = require('console-shim'),
-        easyXDM = require('chiropractor-path/jquery.cors/easyxdm/easyxdm'),
-        jquery_cors_path = 'chiropractor-path/jquery.cors/',
+        easyXDM = require('jquery.cors/easyxdm/easyxdm'),
+        jquery_cors_path = 'jquery.cors/',
         easyXDM_path = jquery_cors_path + '/easyxdm/',
         easyXDM_connections = {},
         jquery_cors = {};
@@ -63,6 +53,11 @@ define(function (require) {
      * http://api.jquery.com/jQuery.ajaxTransport/
      */
      $.ajaxTransport("+*", function (options, originalOptions, jqXHR) {
+
+        // Uncomment these two lines if want to test easyXDM
+        // $.support.cors = false;
+        // options.crossDomain = true;
+
         if (options.crossDomain && !$.support.cors) {
             var provider_base_url = "",
                 regexp_results = options.url.match(/^(https?:\/\/[^\/]*)\/?.*/);

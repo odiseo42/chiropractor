@@ -3,6 +3,8 @@ var args = process.argv.splice(2),
     ciMode = args.indexOf('--ci') !== -1,
     devMode = args.indexOf('--dev') !== -1;
 
+
+
 module.exports = function(karma) {
     karma.set({
 
@@ -20,6 +22,7 @@ module.exports = function(karma) {
 
             {pattern: 'bower_components/**/*.js', included: false},
             {pattern: 'lib/**/*.js', included: false},
+            {pattern: 'jquery.cors/**/*.js', included: false},
             {pattern: 'node_modules/mocha/mocha.css', included: false},
             {pattern: 'specs/**/*.js', included: false},
             {pattern: 'specs/**/*.json', included: false},
