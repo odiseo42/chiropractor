@@ -1,5 +1,4 @@
-(function () {
-/*
+(function () {/*
     json2.js
     2013-05-26
 
@@ -645,6 +644,7 @@ define('chiropractor/views/form',['require','underscore','json-ie7','jquery','ba
     });
 });
 
+
 /* START_TEMPLATE */
 define('hbs!chiropractor/views/templates/fields/label',['hbs','handlebars'], function( hbs, Handlebars ){ 
 var t = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -718,6 +718,7 @@ define('chiropractor/views/field',['require','json-ie7','jquery','underscore','h
     };
 });
 
+
 /* START_TEMPLATE */
 define('hbs!chiropractor/views/templates/row/row',['hbs','handlebars'], function( hbs, Handlebars ){ 
 var t = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -753,6 +754,7 @@ return t;
 });
 /* END_TEMPLATE */
 ;
+
 /* START_TEMPLATE */
 define('hbs!chiropractor/views/templates/row/error_messagebox',['hbs','handlebars'], function( hbs, Handlebars ){ 
 var t = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -904,6 +906,7 @@ define('chiropractor/hbs/view',['require','underscore','backbone','handlebars'],
     return view;
 });
 
+
 /* START_TEMPLATE */
 define('hbs!chiropractor/views/templates/formfield/text',['hbs','handlebars'], function( hbs, Handlebars ){ 
 var t = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -962,6 +965,7 @@ return t;
 });
 /* END_TEMPLATE */
 ;
+
 /* START_TEMPLATE */
 define('hbs!chiropractor/views/templates/formfield/textarea',['hbs','handlebars'], function( hbs, Handlebars ){ 
 var t = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1004,6 +1008,7 @@ return t;
 });
 /* END_TEMPLATE */
 ;
+
 /* START_TEMPLATE */
 define('hbs!chiropractor/views/templates/formfield/select',['hbs','handlebars'], function( hbs, Handlebars ){ 
 var t = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1091,6 +1096,7 @@ return t;
 });
 /* END_TEMPLATE */
 ;
+
 /* START_TEMPLATE */
 define('hbs!chiropractor/views/templates/formfield/checkbox',['hbs','handlebars'], function( hbs, Handlebars ){ 
 var t = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1146,6 +1152,7 @@ return t;
 });
 /* END_TEMPLATE */
 ;
+
 /* START_TEMPLATE */
 define('hbs!chiropractor/views/templates/formfield/radio',['hbs','handlebars'], function( hbs, Handlebars ){ 
 var t = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -4104,6 +4111,9 @@ define('jquery.cors/easyxdm/easyxdm',['require','json2'],function(require) {
         };
         window.easyXDM = easyXDM;
 
+        //returning the module instance
+        return easyXDM;
+
     //})(window, document, location, window.setTimeout, decodeURIComponent, encodeURIComponent);
 
 });
@@ -4416,6 +4426,7 @@ define('chiropractor/models/auth',['require','backbone','jquery','json-ie7','und
         cleanup: clearToken
     };
 });
+
 
 /* START_TEMPLATE */
 define('hbs!chiropractor/views/templates/error/modelfetch',['hbs','handlebars'], function( hbs, Handlebars ){ 
@@ -4823,4 +4834,5 @@ define('chiropractor/main',['require','backbone','underscore','backbone.subroute
 });
 
 define('chiropractor', ['chiropractor/main'], function (main) { return main; });
+
 }());

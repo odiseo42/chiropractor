@@ -2559,6 +2559,9 @@ define(function(require) {
         };
         window.easyXDM = easyXDM;
 
+        //returning the module instance
+        return easyXDM;
+
     //})(window, document, location, window.setTimeout, decodeURIComponent, encodeURIComponent);
 
 });
